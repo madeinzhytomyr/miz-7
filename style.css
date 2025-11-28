@@ -2014,6 +2014,12 @@ section,
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+
+
+    padding: 30px 24px;
+    /* margin-top: 0px !important; */
+
+
 }
 
 .services .service-item::before {
@@ -2092,6 +2098,9 @@ section,
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+
+
+
 }
 
 .services .icon-wrapper i {
@@ -2110,6 +2119,7 @@ section,
     line-height: 1.6;
     color: color-mix(in srgb, var(--default-color), transparent 25%);
     margin-bottom: 20px;
+    color: var(--bs-secondary);
 }
 
 .services .read-more {
@@ -2216,6 +2226,8 @@ section,
     .services .service-item {
         padding: 30px 20px;
         margin-bottom: 20px;
+        margin-bottom: 0px !important;
+
     }
 
     .services .icon-wrapper {
@@ -2246,6 +2258,10 @@ section,
         height: 300px;
     }
 }
+
+
+
+
 
 /*--------------------------------------------------------------
 # Portfolio Section
@@ -4313,3 +4329,4 @@ section,
     opacity: 0.9;
     transform: translateY(-2px);
 }
+
