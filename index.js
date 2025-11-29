@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateLoadMoreButton() {
         const filteredProducts = products.filter(
             (p) =>
-                currentFilter === "*" || `.filter-${p.year}` === currentFilter
+                currentFilter === "*" || `.filter-${p.filter}` === currentFilter
         );
         loadMoreBtn.style.display =
             filteredProducts.length > visibleCount &&
@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const filteredProducts = products.filter(
                         (p) =>
                             currentFilter === "*" ||
-                            `.filter-${p.year}` === currentFilter
+                            `.filter-${p.filter}` === currentFilter
                     );
                     const initialProducts = filteredProducts.slice(
                         0,
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function loadMore() {
         const filteredProducts = products.filter(
             (p) =>
-                currentFilter === "*" || `.filter-${p.year}` === currentFilter
+                currentFilter === "*" || `.filter-${p.filter}` === currentFilter
         );
         const nextVisible = visibleCount + 3;
         const newCards = [];
@@ -799,6 +799,11 @@ document.getElementById("prevCard").addEventListener("click", () => {
 
 // показати першу картку
 renderSingleCard(currentIndex);
+
+
+
+
+
 
 
 
