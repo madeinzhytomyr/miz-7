@@ -1,162 +1,115 @@
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-// карта team
-document.addEventListener("DOMContentLoaded", function () {
-    const products = [
-        {
-            name: "Андріан Іванюк",
-            img: "/img/team/andrian_ivaniuk.jpg",
-            position: "Ідейний рушій",
-            social: [],
-        },
-        {
-            name: "Роман Пушкар",
-            img: "/img/team/roman_pushkar.jpg",
-            position: "Організатор подій",
-            social: [],
-        },
-        {
-            name: "Ілона Бондар",
-            img: "/img/team/ilona_bondar.jpg",
-            position: "Голос спільноти",
-            social: [],
-        },
-        {
-            name: "Богдан Коваленко",
-            img: "/img/team/bogdan_kovalenko.jpg",
-            position: "Архітектор",
-            social: [],
-        },
-        {
-            name: "Анастасія Дяченко",
-            img: "/img/team/anastasia_diachenko.jpg",
-            position: "Кураторка",
-            social: [],
-        },
-        {
-            name: "Діана Романюк",
-            img: "/img/team/diana_romaniuk.jpg",
-            position: "Мисливиця за новими форматами",
-            social: [],
-        },
-        {
-            name: "Назар Поліщук",
-            img: "/img/team/nazar_polishchuk.jpg",
-            position: "Деталі міста",
-            social: [],
-        },
-        {
-            name: "Ілля Шевчук",
-            img: "/img/team/illa_shewchuk.jpg",
-            position: "Інженер змін",
-            social: [],
-        },
-        {
-            name: "Вікторія Петренко",
-            img: "/img/team/viktoria_petrenko.jpg",
-            position: "Координаторка гармонії",
-            social: [],
-        },
-        {
-            name: "Євген Ткаченко",
-            img: "/img/team/evgen_tkachenko.jpg",
-            position: "Технічний маг",
-            social: [],
-        },
-        {
-            name: "Софія Савчук",
-            img: "/img/team/sofia_savchuk.jpg",
-            position: "Хранителька балансу",
-            social: [],
-        },
 
-        // {
-        //     name: "Роман Пушкар",
-        //     img: "/img/team/roman_pushkar.jpg",
-        //     position: "Організатор подій, які об’єднують людей",
-        //     social: [
-        //         { icon: "bi bi-instagram", link: "https://www.instagram.com/pushkar_roma/" },
-        //         { icon: "bi bi-youtube", link: "https://www.youtube.com/" },
-        //         { icon: "bi bi-tiktok", link: "https://www.tiktok.com/" }
-        //     ],
-        // },
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+// карта RICHTUNG
+
+document.addEventListener("DOMContentLoaded", function () {
+    const services = [
+        {
+            title: "Підтримка Армії",
+            icon: "bi bi-shield-check",
+            description:
+                "Допомагаємо ЗСУ та захисникам: збори, амуніція, технічна підтримка та волонтерські ініціативи.",
+            link: "#support"
+        },
+        {
+            title: "Інфраструктура Міста",
+            icon: "bi bi-building",
+            description:
+                "Працюємо над оновленням та покращенням міського простору, роблячи Житомир зручним і сучасним.",
+            link: "#support"
+        },
+        {
+            title: "Підтримка Малого Бізнесу",
+            icon: "bi bi-shop-window",
+            description:
+                "Допомагаємо місцевим підприємцям та стартапам розвиватися і зміцнювати економіку Житомира.",
+            link: "#support"
+        },
+        {
+            title: "Промоція Житомира",
+            icon: "bi bi-megaphone",
+            description:
+                "Працюємо над тим, щоб місто звучало в Україні та світі: туризм, брендінг, культурні події.",
+            link: "#support"
+        },
+        {
+            title: "Волонтерство",
+            icon: "bi bi-heart",
+            description:
+                "Єднаємо людей навколо добрих справ: допомога місту, людям, проєкти взаємопідтримки.",
+            link: "#support"
+        },
+        {
+            title: "Співпраця та Партнерства",
+            icon: "bi bi-globe",
+            description:
+                "Розвиваємо місцеву та міжнародну взаємодію, створюючи нові можливості для міста.",
+            link: "#support"
+        }
     ];
 
-    const container = document.getElementById("products_1");
-    let currentIndex = 0;
+    const container = document.getElementById("servicesContainer");
 
-    function createCard(product) {
-        const card = document.createElement("div");
-        card.className =
-            "team-card col-12 col-sm-12 col-md-6 col-lg-4 col-xxl-3 team-member0";
+    if (!container) {
+        console.error("❌ Контейнер #servicesContainer не знайдено!");
+        return;
+    }
 
-        card.innerHTML = `
-            <div class="team-member card bg-dark border-0 shadow-sm rounded-4 p-3">
-                <div class="member-img rounded-3 overflow-hidden mb-2 mx-auto">
-                    <img src="${product.img}" class="img-fluid rounded-3 img_team" alt="${product.name}">
+    function createServiceItem(item, i) {
+        const div = document.createElement("div");
+        div.className = "col-lg-3 col-md-6 col-xxl-4 px-4";
+        div.setAttribute("data-aos", "zoom-in");
+        div.setAttribute("data-aos-delay", 100 + i * 100);
+
+        div.innerHTML = `
+            <div class="service-item row align-items-center">
+                <div class="col-auto px-0">
+                    <div class="icon-wrapper px-0">
+                        <i class="${item.icon}"></i>
+                    </div>
                 </div>
-                <div class="member-info text-center mt-2">
-                    <h6 class="fw-semibold text-white mb-1">${product.name}</h6>
-                    <span class="small text-secondary d-block">${product.position}</span>
+
+                <div class="ps-4 col text-start pe-0">
+                    <h4>${item.title}</h4>
+                    <a style="font-size: 12px;" href="${item.link}" class="read-more pb-3">
+                        <span>Підтримати</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
+
+                <p class="mb-0 text-start px-0">${item.description}</p>
             </div>
         `;
-        return card;
+
+        return div;
     }
 
-    // Рендеримо всі картки одразу
-    products.forEach((p) => container.appendChild(createCard(p)));
-
-    function perView() {
-        const w = window.innerWidth;
-        if (w < 576) return 1;
-        if (w < 992) return 2;
-        if (w < 1400) return 3;
-        return 4;
-    }
-
-    function updateSlider() {
-        const visible = perView();
-        const cardWidth = container.children[0].offsetWidth + 16; // картка + gap
-        container.style.transform = `translateX(${
-            -currentIndex * cardWidth
-        }px)`;
-    }
-
-    document.getElementById("nextCard").addEventListener("click", () => {
-        const visible = perView();
-        currentIndex = Math.min(currentIndex + 1, products.length - visible);
-        updateSlider();
+    // 🔹 Рендер
+    services.forEach((item, i) => {
+        container.appendChild(createServiceItem(item, i));
     });
-
-    document.getElementById("prevCard").addEventListener("click", () => {
-        currentIndex = Math.max(currentIndex - 1, 0);
-        updateSlider();
-    });
-
-    window.addEventListener("resize", updateSlider);
-
-    updateSlider();
 });
+
+
 
 // карта proect
 // карта proect
@@ -362,6 +315,174 @@ document.addEventListener("DOMContentLoaded", function () {
     loadMoreBtn.addEventListener("click", loadMore);
     renderInitial();
 });
+
+
+
+
+
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+// карта team
+document.addEventListener("DOMContentLoaded", function () {
+    const products = [
+        {
+            name: "Андріан Іванюк",
+            img: "/img/team/andrian_ivaniuk.jpg",
+            position: "Ідейний рушій",
+            social: [],
+        },
+        {
+            name: "Роман Пушкар",
+            img: "/img/team/roman_pushkar.jpg",
+            position: "Організатор подій",
+            social: [],
+        },
+        {
+            name: "Ілона Бондар",
+            img: "/img/team/ilona_bondar.jpg",
+            position: "Голос спільноти",
+            social: [],
+        },
+        {
+            name: "Богдан Коваленко",
+            img: "/img/team/bogdan_kovalenko.jpg",
+            position: "Архітектор",
+            social: [],
+        },
+        {
+            name: "Анастасія Дяченко",
+            img: "/img/team/anastasia_diachenko.jpg",
+            position: "Кураторка",
+            social: [],
+        },
+        {
+            name: "Діана Романюк",
+            img: "/img/team/diana_romaniuk.jpg",
+            position: "Мисливиця за новими форматами",
+            social: [],
+        },
+        {
+            name: "Назар Поліщук",
+            img: "/img/team/nazar_polishchuk.jpg",
+            position: "Деталі міста",
+            social: [],
+        },
+        {
+            name: "Ілля Шевчук",
+            img: "/img/team/illa_shewchuk.jpg",
+            position: "Інженер змін",
+            social: [],
+        },
+        {
+            name: "Вікторія Петренко",
+            img: "/img/team/viktoria_petrenko.jpg",
+            position: "Координаторка гармонії",
+            social: [],
+        },
+        {
+            name: "Євген Ткаченко",
+            img: "/img/team/evgen_tkachenko.jpg",
+            position: "Технічний маг",
+            social: [],
+        },
+        {
+            name: "Софія Савчук",
+            img: "/img/team/sofia_savchuk.jpg",
+            position: "Хранителька балансу",
+            social: [],
+        },
+
+        // {
+        //     name: "Роман Пушкар",
+        //     img: "/img/team/roman_pushkar.jpg",
+        //     position: "Організатор подій, які об’єднують людей",
+        //     social: [
+        //         { icon: "bi bi-instagram", link: "https://www.instagram.com/pushkar_roma/" },
+        //         { icon: "bi bi-youtube", link: "https://www.youtube.com/" },
+        //         { icon: "bi bi-tiktok", link: "https://www.tiktok.com/" }
+        //     ],
+        // },
+    ];
+
+    const container = document.getElementById("products_1");
+    let currentIndex = 0;
+
+    function createCard(product) {
+        const card = document.createElement("div");
+        card.className =
+            "team-card col-12 col-sm-12 col-md-6 col-lg-4 col-xxl-3 team-member0";
+
+        card.innerHTML = `
+            <div class="team-member card bg-dark border-0 shadow-sm rounded-4 p-3">
+                <div class="member-img rounded-3 overflow-hidden mb-2 mx-auto">
+                    <img src="${product.img}" class="img-fluid rounded-3 img_team" alt="${product.name}">
+                </div>
+                <div class="member-info text-center mt-2">
+                    <h6 class="fw-semibold text-white mb-1">${product.name}</h6>
+                    <span class="small text-secondary d-block">${product.position}</span>
+                </div>
+            </div>
+        `;
+        return card;
+    }
+
+    // Рендеримо всі картки одразу
+    products.forEach((p) => container.appendChild(createCard(p)));
+
+    function perView() {
+        const w = window.innerWidth;
+        if (w < 576) return 1;
+        if (w < 992) return 2;
+        if (w < 1400) return 3;
+        return 4;
+    }
+
+    function updateSlider() {
+        const visible = perView();
+        const cardWidth = container.children[0].offsetWidth + 16; // картка + gap
+        container.style.transform = `translateX(${
+            -currentIndex * cardWidth
+        }px)`;
+    }
+
+    document.getElementById("nextCard").addEventListener("click", () => {
+        const visible = perView();
+        currentIndex = Math.min(currentIndex + 1, products.length - visible);
+        updateSlider();
+    });
+
+    document.getElementById("prevCard").addEventListener("click", () => {
+        currentIndex = Math.max(currentIndex - 1, 0);
+        updateSlider();
+    });
+
+    window.addEventListener("resize", updateSlider);
+
+    updateSlider();
+});
+
+
+
+
 
 // карта zbiorka
 // карта zbiorka
@@ -678,3 +799,28 @@ document.getElementById("prevCard").addEventListener("click", () => {
 
 // показати першу картку
 renderSingleCard(currentIndex);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
