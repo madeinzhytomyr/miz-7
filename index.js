@@ -356,12 +356,12 @@ document.addEventListener("DOMContentLoaded", function () {
             position: "Організатор подій",
             social: [],
         },
-        {
-            name: "Ілона Бондар",
-            img: "/img/team/ilona_bondar.jpg",
-            position: "Голос спільноти",
-            social: [],
-        },
+        // {
+        //     name: "Ілона Бондар",
+        //     img: "/img/team/ilona_bondar.jpg",
+        //     position: "Голос спільноти",
+        //     social: [],
+        // },
         {
             name: "Богдан Коваленко",
             img: "/img/team/bogdan_kovalenko.jpg",
@@ -799,8 +799,6 @@ document.getElementById("prevCard").addEventListener("click", () => {
 
 // показати першу картку
 renderSingleCard(currentIndex);
-
-
 
 
 
