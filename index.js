@@ -1,4 +1,8 @@
 
+
+
+
+
 // карта RICHTUNG
 // карта RICHTUNG
 // карта RICHTUNG
@@ -148,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
             category: "Завершено",
             tags: ["Житомир", "Україна"],
             date: "18 жовтня 2025",
-            linkDetails: "/projects/project_3.html",
+            linkDetails: "#exampleModal_3",
             filter: "2025",
         },
         {
@@ -157,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
             category: "Завершено",
             tags: ["Житомир", "Україна"],
             date: "20 вересня 2025",
-            linkDetails: "/projects/project_2.html",
+            linkDetails: "#exampleModal_2",
             filter: "2025",
         },
         {
@@ -166,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
             category: "Завершено",
             tags: ["Житомир", "Україна"],
             date: "30 серпня 2025",
-            linkDetails: "/projects/project_1.html",
+            linkDetails: "#exampleModal_1",
             filter: "2025",
         },
     ];
@@ -199,10 +203,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             }</h4>
                         </div>
                         <div class="portfolio-actions ">
-                            <a href="${
-                                product.linkDetails
-                            }" class="portfolio-details bg-primary text-white fw-bold rounded-3" ><i class="bi bi-arrow-right
-                            "></i></a>
+
+                         <button type="button" class="btn btn-primary portfolio-details bg-primary text-white fw-bold rounded-3" data-bs-toggle="modal" 
+                         data-bs-target="${    product.linkDetails }"> <i class="bi bi-arrow-right "></i>   </button>
+
                         </div>
                     </div>
                 </div>
@@ -799,6 +803,17 @@ document.getElementById("prevCard").addEventListener("click", () => {
 
 // показати першу картку
 renderSingleCard(currentIndex);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
