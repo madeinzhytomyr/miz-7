@@ -1,4 +1,19 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
 * Template Name: Craftivo
 * Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
@@ -21,6 +36,12 @@
         "Noto Color Emoji";
     --heading-font: "Mulish", sans-serif;
     --nav-font: "Raleway", sans-serif;
+
+
+
+    --default-font:  "Caveat", cursive !important;
+--heading-font:  "Caveat", cursive !important;
+--nav-font:  "Caveat", cursive !important;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -78,6 +99,9 @@ body {
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal; */
+
+        font-family: "Caveat", cursive !important;
+
 }
 
 a {
@@ -99,6 +123,8 @@ h5,
 h6 {
     color: var(--heading-color);
     font-family: var(--heading-font);
+
+    
 }
 
 /*--------------------------------------------------------------
@@ -3343,6 +3369,180 @@ section,
 
 
 
+
+.open-modal {
+    position: relative;
+    z-index: 10000;
+  }
+
+
+
+
+
+
+  .open_modal_btn_1,
+  .open_modal_btn_2,
+  .open_modal_btn_3 {
+    position: relative;
+    z-index: 10001;
+    pointer-events: auto;
+  }
+  
+
+
+
+  /* === MODAL === */
+  /* === MODAL === */
+  /* === MODAL === */
+  /* === MODAL === */
+  /* === MODAL === */
+  /* === MODAL === */
+  /* === MODAL === */
+  /* === MODAL === */
+  /* === MODAL === */
+  /* === MODAL === */
+
+  /* === MODAL === */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 99999;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+  
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-window {
+    background: #fff;
+    width: 95%;
+    max-width: 1400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    position: relative;
+  }
+  
+  /* Кнопка закриття */
+  .modal-close {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    z-index: 100000;
+  
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 32px;
+    line-height: 1;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 9999;
+  }
+  
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+
+
+
+
+
+
+
+
+
+  
+  /* Вікно */
+  .modal-window {
+    background: #fff;
+    width: 100%;
+    max-width: 1320px ;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+
+
+  }
+
+  
+  /* Анімація */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+
+  
+
+/* кнопка закрити */
+/* кнопка закрити */
+/* кнопка закрити */
+/* кнопка закрити */
+
+  .modal .modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+  
+
+
+
+
+
+  /* ❌ Забороняємо виділення фото */
+    /* ❌ Забороняємо виділення фото */
+  /* ❌ Забороняємо виділення фото */
+  /* ❌ Забороняємо виділення фото */
+  /* ❌ Забороняємо виділення фото */
+
+.portfolio-details-slider,
+.portfolio-details-slider img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+/* ✅ Повертаємо кліки для кнопок */
+.portfolio-details-slider .swiper-button-next,
+.portfolio-details-slider .swiper-button-prev,
+.portfolio-details-slider .swiper-pagination {
+  pointer-events: auto;
+}
 
 
 
