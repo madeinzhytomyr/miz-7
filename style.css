@@ -26,6 +26,21 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
+/**
+* Template Name: Craftivo
+* Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
+* Updated: Oct 04 2025 with Bootstrap v5.3.8
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+@charset "UTF-8";
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
 
 
 @font-face {
@@ -41,11 +56,10 @@
 
 
 :root {
-    --default-font: "Playpen_Sans";
-    --heading-font: "Playpen_Sans";
-    --nav-font: "Playpen_Sans";
+    --default-font: "Playpen_Sans" !important;
+    --heading-font: "Playpen_Sans"!important;
+    --nav-font: "Playpen_Sans"!important;
 }
-
 
 
 
@@ -101,14 +115,10 @@
 body {
     color: var(--default-color);
     background-color: var(--background-color);
-    font-family: var(--default-font);
+    font-family: var(--default-font)!important;
 
-    /* font-family: "Faustina", serif !important;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal; */
 
-        font-family: "Caveat", cursive !important;
+
 
 }
 
@@ -130,10 +140,11 @@ h4,
 h5,
 h6 {
     color: var(--heading-color);
-    font-family: var(--heading-font);
+    font-family: var(--heading-font)!important;
 
     
 }
+
 
 /*--------------------------------------------------------------
 # Global Header
@@ -3561,6 +3572,7 @@ section,
 .portfolio-details-slider .swiper-pagination {
   pointer-events: auto;
 }
+
 
 
 
