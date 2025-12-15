@@ -29,30 +29,23 @@
 
 
 @font-face {
-    font-family: 'Faustina';
-    src: url('fonts/Faustina/static/Faustina-Regular.ttf') format('truetype');
+    font-family: 'Playpen_Sans';
+    src: url('/fonts/Playpen_Sans/PlaypenSans-VariableFont_wght.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
-    /* font-display: swap; */
+    font-display: swap;
 }
+
 
 
 
 
 :root {
-    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
-    --heading-font: "Mulish", sans-serif;
-    --nav-font: "Raleway", sans-serif;
-
-
-
-    --default-font:  "Faustina", cursive !important;
---heading-font:  "Faustina", cursive !important;
---nav-font:  "Faustina", cursive !important;
+    --default-font: "Playpen_Sans";
+    --heading-font: "Playpen_Sans";
+    --nav-font: "Playpen_Sans";
 }
+
 
 
 
@@ -3568,6 +3561,7 @@ section,
 .portfolio-details-slider .swiper-pagination {
   pointer-events: auto;
 }
+
 
 
 
