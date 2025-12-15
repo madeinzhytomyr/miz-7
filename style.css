@@ -15,12 +15,13 @@
 /* Fonts */
 
 @font-face {
-    font-family: 'Caveat';
+    font-family: 'Faustina';
     src: url('fonts/Faustina/static/Faustina-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
+
 
 
 
@@ -34,11 +35,10 @@
 
 
 
-    --default-font:  "Caveat", cursive !important;
---heading-font:  "Caveat", cursive !important;
---nav-font:  "Caveat", cursive !important;
+    --default-font:  "Faustina", cursive !important;
+--heading-font:  "Faustina", cursive !important;
+--nav-font:  "Faustina", cursive !important;
 }
-
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
     --background-color: #141414; /* Background color for the entire website, including individual sections */
@@ -3548,6 +3548,7 @@ section,
 .portfolio-details-slider .swiper-pagination {
   pointer-events: auto;
 }
+
 
 
 
