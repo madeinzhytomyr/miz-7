@@ -2,7 +2,6 @@
 
 
 
-
 // карта RICHTUNG
 // карта RICHTUNG
 // карта RICHTUNG
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             link: "#support"
         },
         {
-            title: "Інфраструктура Міста",
+            title: "Покращення Міста",
             icon: "bi bi-building",
             description:
                 "Працюємо над оновленням та покращенням міського простору, роблячи Житомир зручним і сучасним.",
@@ -80,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createServiceItem(item, i) {
         const div = document.createElement("div");
-        div.className = "col-lg-3 col-md-6 col-xxl-4 px-4";
+        div.className = "col-lg-3 col-md-6 col-lg-4 px-4";
         div.setAttribute("data-aos", "zoom-in");
         div.setAttribute("data-aos-delay", 100 + i * 100);
 
@@ -803,6 +802,15 @@ document.getElementById("prevCard").addEventListener("click", () => {
 
 // показати першу картку
 renderSingleCard(currentIndex);
+
+
+
+
+
+
+
+
+
 
 
 
