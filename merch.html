@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+  <!-- NAZWA -->
+  <!-- NAZWA -->
+  <!-- NAZWA -->
+  <!-- NAZWA -->
+  <!-- NAZWA -->
+  <!-- NAZWA -->
+  <!-- NAZWA -->
+  <!-- NAZWA -->
+  <title>MADE in Житомир</title>
+
+
+  <!-- ICONKA -->
+  <!-- ICONKA -->
+  <!-- ICONKA -->
+  <!-- ICONKA -->
+  <!-- ICONKA -->
+  <!-- ICONKA -->
+  <!-- ICONKA -->
+  <link rel="icon" href="https://i.postimg.cc/PJWPN72d/logo.jpg" type="image/png">
+
+  <!-- CSS -->
+  <!-- CSS -->
+  <!-- CSS -->
+  <!-- CSS -->
+  <!-- CSS -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="merch.css" media="all">
+
+
+
+
+
+  <!-- iconka bootstrap -->
+  <!-- iconka bootstrap -->
+  <!-- iconka bootstrap -->
+  <!-- iconka bootstrap -->
+  <!-- iconka bootstrap -->
+  <!-- iconka bootstrap -->
+  <!-- iconka bootstrap -->
+  <!-- iconka bootstrap -->
+  <!-- iconka bootstrap -->
+  <!-- iconka bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script type="module" src="merch.js" defer></script>
+
+</head>
+
+<body class="m-0 p-0  ">
+
+
+  <!-- ======== HEADER ======== -->
+  <!-- ======== HEADER ======== -->
+  <!-- ======== HEADER ======== -->
+  <!-- ======== HEADER ======== -->
+  <!-- ======== HEADER ======== -->
+  <!-- ======== HEADER ======== -->
+
+
+
+  <header id="header" style=" z-index: 9999 !important;" class="p-0 header d-flex align-items-center fixed-top ">
+    <div style=" max-width: 1320px ; border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);"
+      class=" p-3  container-fluid  position-relative d-flex align-items-center  ">
+
+      <a href="/merch.html" class="logo d-flex align-items-center me-auto col">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h5 class=" sitename ps-2 pe-2 m-0 py-2">MADE in Житомир МЕРЧ</h5>
+      </a>
+
+      <!-- Навігація -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/" target="_blank">Хто Ми?</a></li>
+          <li><a href="#products">Мерч</a></li>
+          <li><a href="#delivery">Доставка</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#contact">Контакт</a></li>
+
+          <li class="d-none"><a href="#contact">Контакт</a></li>
+        </ul>
+        <!-- <i class="mobile-nav-toggle d-xl-none bi bi-list"></i> -->
+      </nav>
+
+      <!-- Кнопки справа -->
+      <div class="m-0 p-0 col-auto">
+        <div class="m-0 p-0 row justify-content-end align-items-center">
+
+
+          <!-- кошик -->
+          <div class="m-0 p-0 col-auto">
+            <div class="m-0 p-0 row justify-content-center align-items-center">
+              <div class="m-0 p-0 mx-3 col-auto position-relative">
+
+                <a href="#" id="openCart"
+                  class="my_icon me-2 col-auto fa-solid fa-basket-shopping bg-transparent border-0"
+                  style="cursor: pointer;"></a>
+
+                <div id="totalAmount"
+                  style="padding-top: 4px; padding-bottom: 5px; height: auto; padding-inline: 7.5px;"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-white text-primary fw-bold small">
+                  0</div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- <a href="/buy.html" class="my_link m-0 p-3 ps-0 col-auto d-none d-md-block text-white ">Warenkorb</a> -->
+
+          <!-- Кнопки бургер / закриття -->
+          <div class="m-0 p-0 col-auto">
+            <div class="m-0 p-0 row justify-content-center ">
+
+              <div id="close-menu" class="my_icon col-auto  d-none fa-solid fa-xmark bg-transparent border-0"></div>
+
+              <div id="burger-menu"
+                class="my_icon col-auto fs-3 d-flex d-lg-none fa-solid fa-bars bg-transparent border-0">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Навігація -->
+      <div id="nav-links" class="m-0 p-0 py-2 col-auto  d-lg-none border-top">
+        <div class="m-0 p-2 row justify-content-start">
+          <a href="/" target="_blank" class="my_link col-12 text-start ">Хто Ми?</a>
+          <a href="#products" class="my_link col-12 text-start ">Мерч</a>
+          <a href="#delivery" class="my_link col-12  text-start ">Доставка</a>
+          <a href="#faq" class="my_link col-12 text-start ">FAQs</a>
+          <a href="#contact" class="my_link col-12 text-start  ">Контакт</a>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- ======== БІЧНЕ ВІКНО КОШИКА ======== -->
+      <div id="sideCart" style="background-color: #141414; z-index: 9999;" class="m-0 p-0 row side-cart">
+
+        <div style=" border-bottom: 1px solid var(--bs-primary);" class="m-0 p-2 row side-cart-header bg-prim;ary">
+
+          <div class="m-0 p-3 col-auto fs-4 text-white">Кошик</div>
+
+          <button id="closeCart" class="my_icon me-2 col-auto fa-solid fa-xmark bg-transparent border-0 ">
+          </button>
+
+        </div>
+
+        <div id="cartContent" style="background-color: #141414" class="m-0 p-0 px-3  side-cart-content">
+
+          <div id="usersContainer" class="m-0 p-0 py-3 col-12  d-flex flex-column">
+            <div
+              class="empty-cart-alert d-flex flex-column align-items-center justify-content-center text-center p-5 rounded-4 shadow-sm text-danger">
+
+              <i class="fas fa-shopping-cart fa-4x mb-3 cart-icon text-primary"></i>
+              <strong class="fs-4 text-primary">Кошик для покупок порожній.</strong>
+              <p class="mt-2 mb-0 text-white fs-5">
+                Додайте товари, щоб почати робити покупки!
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="m-0 p-3 row side-cart-footer border-0 ">
+
+          <div class="m-0 p-3 px-2 d-flex justify-content-between fw-bold">
+            <span class="m-0 p-0 fs-5">Разом:</span>
+            <span class="m-0 p-0 fs-5" id="cartTotalPrice">₴0.00</span>
+          </div>
+
+
+
+          <!-- Button trigger modal -->
+          <button type="button" id="orderBtn" class="my_button col-12 py-2 bg-primary text-white">
+            <i class="fa-solid fa-credit-card"></i>
+            <span class="ps-2">Зробити замовлення</span>
+          </button>
+
+
+
+        </div>
+      </div>
+
+      <div id="cartBackdrop" class="m-0 p-0  wow cart-backdrop"></div>
+
+
+
+      <!-- ======== БІЧНЕ ВІКНО ДОСТАВКИ ======== -->
+      <div id="sideDelivery" class="m-0 p-0 row side-cart" style="background-color:#141414">
+
+        <!-- Header -->
+        <div class="m-0 p-2 row side-cart-header">
+          <div class="m-0 p-3 col-auto fs-4 text-white">Доставка</div>
+
+          <button id="closeDelivery" class="my_icon me-2 col-auto fa-solid fa-xmark bg-transparent border-0">
+          </button>
+        </div>
+
+        <!-- Content -->
+        <div class="m-0 p-3 side-cart-content">
+
+          <p class="text-center mb-4 fs-6 small text-white">
+            Заповніть дані для доставки — ми подбаємо, щоб замовлення дійшло швидко та безпечно.
+          </p>
+
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <input id="firstName" type="text" class="form-control" placeholder="Ім'я">
+            </div>
+            <div class="col-sm-6">
+              <input id="lastName" type="text" class="form-control" placeholder="Прізвище">
+            </div>
+            <div class="col-sm-6">
+              <input id="city" type="text" class="form-control" placeholder="Місто">
+            </div>
+            <div class="col-sm-6">
+              <input id="postOffice" type="text" class="form-control" placeholder="Відділення Нової Пошти">
+            </div>
+            <div class="col-sm-6">
+              <input id="phone" type="tel" class="form-control" placeholder="Телефон">
+            </div>
+            <div class="col-sm-6">
+              <input id="email" type="email" class="form-control" placeholder="E-mail">
+            </div>
+            <div class="col-12">
+              <textarea id="description" class="form-control" rows="3" placeholder="Опис"></textarea>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- Footer -->
+        <div class="m-0 p-3 row side-cart-footer border-0 ">
+          <div class="d-flex justify-content-between fw-bold mb-3">
+            <span>До оплати:</span>
+            <span id="totalPay">€0.00</span>
+          </div>
+
+          <button id="goToPayment" class="my_button col-12 py-2 bg-primary text-white">
+            <i class="fa-solid fa-credit-card"></i>
+            <span class="ps-2">Оплатити зараз</span>
+          </button>
+          <a href="/merch.html" class="btn btn-outline-secondary btn-lg rounded-3 shadow-sm fs-6 mt-3">
+            <i class="fas fa-arrow-left me-2"></i>Продовжити покупки
+          </a>
+        </div>
+
+      </div>
+
+
+
+      <!-- ======== БІЧНЕ ВІКНО ОПЛАТИ ======== -->
+      <div id="sidePayment" class="side-cart" style="background-color: #141414; z-index: 99999;">
+
+        <!-- Header -->
+        <div class="side-cart-header" style="border-bottom: 1px solid var(--bs-primary);">
+          <div class="m-0 p-3 col-auto fs-4 text-white">Оплата</div>
+          <button id="closePayment" class="my_icon me-2 col-auto fa-solid fa-xmark bg-transparent border-0"></button>
+        </div>
+
+        <!-- Content -->
+        <div class="side-cart-content p-4">
+          <div class="payment-card bg-white rounded-4 shadow-lg p-4 mb-3 text-dark mx-auto" style="max-width:400px;">
+            <h5 class="fw-bold text-center mb-4 text-dark">Дані для переказу</h5>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold">Банк:</span>
+              <span>ПриватБанк</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold">Отримувач:</span>
+              <span>Іваненко Іван Іванович</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold pe-3">Рахунок:</span><br>
+              <span>UA12 3456 7890 1234 5678 9012 34567</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold">Назва Переказу:</span>
+              <span id="randomNumber">00000</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-semibold">Сума:</span>
+              <span id="totalPay1">₴0.00</span>
+            </div>
+          </div>
+
+          <div class="m-0 p-0 form-check row align-items-center justify-content-center ">
+            <input class="form-check-input col-6 m-0 p-0 me-2 mt-1 ms-2" type="checkbox" id="confirmPayment">
+            <label class="form-check-label fw-normal small col-10 m-0 p-0 ps-1" for="confirmPayment">
+              Пітверджую що здійснив оплату або зберіг дані до оплати.
+            </label>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="side-cart-footer d-flex justify-content-between bg-light-pink border-0 p-3">
+          <button id="closePaymentFooter" class="btn btn-outline-secondary rounded-3 px-4">Закрити</button>
+          <button id="confirmBtn" class="btn btn-primary rounded-3 px-4 fw-normal">Пітвердити оплату</button>
+        </div>
+
+      </div>
+
+      <div id="paymentBackdrop" class="cart-backdrop"></div>
+
+
+
+      <!-- Side Success -->
+      <div id="sideSuccess" class="side-panel">
+        <div class="side-content p-4 text-center bg-dark text-white">
+          <h5>Дякуємо! Ми успішно отримали ваше замовлення.</h5>
+          <p class="m-0 p-0 mt-3">Закриття за <span id="successCountdown">5</span> секунд...</p>
+          <button id="closeSuccess" class="btn btn-secondary mt-3">Закрити</button>
+        </div>
+      </div>
+      <div id="successBackdrop" class="backdrop"></div>
+
+
+    </div>
+    </div>
+  </header>
+
+
+  <section style="height: 93px !important;" class="m-0 p-0  "> </section>
+
+
+
+
+  <section id="delivery" class="m-0 p-0 delivery section">
+    <div class="m-0 p-3 py-0 mx-auto container" data-aos="fade-up" data-aos-delay="100">
+      <div class="m-0 p-0 row">
+
+      <img class="m-0 p-0 d-block d-sm-none rounded-4" src="https://doughnuttime.eu/cdn/shop/files/4_6990f1a0-d079-4933-a7d9-fb05bb9ab250.png?v=1756987536&width=832">
+      <img class="m-0 p-0 d-none d-sm-block  rounded-4" src="https://doughnuttime.eu/cdn/shop/files/Website_Banners_Desktop_6_50af4646-35bc-4e22-9a89-264e93a8e2b4.png?v=1764601772&width=1920" >
+
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <!-- products Section -->
+  <section id="products" class="portfolio section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <span class="subtitle">MADE in Житомир</span>
+      <h2>МЕРЧ</h2>
+      <p>Мерч нашої спільноти — речі, що підтримують ініціативи та роблять місто яскравішим і комфортнішим.
+      </p>
+    </div><!-- End Section Title -->
+
+
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+          <li data-filter="filtr-popular" class="filter-active" >Популярне</li>
+          <li data-filter="accessories">Аксесуари</li>
+          <li data-filter="souvenirs">Сувеніри</li>
+          <li data-filter="clothes">Одяг</li>
+
+
+
+        </ul>
+
+        <div id="products_2" 
+          class="m-0 p-0  row  isotope-container " data-aos="fade-up"></div>
+
+        <div class="text-center">
+          <button id="loadMoreProjects"
+            style="border: 1px solid  color-mix(in srgb, var(--default-color), transparent 85%) !important;"
+            class="btn btn-primary py-2 py-4 px-4 mt-4 w-100 bg-transparent  border-start-0 border-secondary  border-end-0  r text-primary"
+            style="display:none; margin-top:30px">
+            Завантажити ще
+          </button>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+  </section><!-- /products Section -->
+
+
+
+
+
+
+
+
+
+  <section id="delivery" class="delivery section">
+
+    <div class="container section-title" data-aos="fade-up">
+      <span class="subtitle">Швидко та зручно</span>
+      <h2>Доставка</h2>
+      <p>
+        Ми подбали, щоб ваші замовлення прибували швидко, безпечно та у найкращому вигляді.
+      </p>
+    </div>
+
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4">
+
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="delivery-card">
+            <div class="delivery-icon">
+              <i class="bi bi-truck"></i>
+            </div>
+            <h4>По Україні</h4>
+            <p>
+              Доставка Новою Поштою у будь-яке місто України протягом
+              <strong>1–2 днів</strong>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="delivery-card">
+            <div class="delivery-icon">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <h4>Термін виконання</h4>
+            <p>
+              Замовлення готується індивідуально та відправляється
+              у день готовності.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="delivery-card">
+            <div class="delivery-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h4>Надійне пакування</h4>
+            <p>
+              Кожен бокс пакується так, щоб зберегти
+              свіжість і презентабельний вигляд.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <section id="faq" class="faq section">
+
+    <div class="container section-title" data-aos="fade-up">
+      <span class="subtitle">Корисна інформація</span>
+      <h2>FAQ</h2>
+      <p>Відповіді на найпоширеніші запитання щодо замовлення та доставки</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Як швидко виконується замовлення?
+            <i class="bi bi-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Кожне замовлення готується індивідуально. Термін виконання —
+              <strong>1–2 дні</strong> залежно від обʼєму.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Якою службою здійснюється доставка?
+            <i class="bi bi-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Доставка здійснюється Новою Поштою по всій Україні.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Чи можна замовити на конкретну дату?
+            <i class="bi bi-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Так, ви можете вказати бажану дату доставки при оформленні замовлення.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+
+  <section id="contact" class="contact section">
+
+    <div class="container section-title" data-aos="fade-up">
+      <span class="subtitle">Звʼязок з нами</span>
+      <h2>Контакт</h2>
+      <p>
+        Маєте запитання або хочете зробити замовлення?
+        Напишіть нам — ми завжди на звʼязку.
+      </p>
+    </div>
+
+    <section class="contacts-section" data-aos="fade-up">
+      <div class="container">
+        <div class="contacts-grid">
+
+          <div class="contact-block">
+            <span class="contact-tag">Місто</span>
+            <h3>Житомир, Україна</h3>
+          </div>
+
+          <div class="contact-block">
+            <span class="contact-tag">Телефон</span>
+            <h3>+38 000 000 00 00</h3>
+          </div>
+
+          <div class="contact-block">
+            <span class="contact-tag">Email</span>
+            <h3><a href="mailto:info@example.com">info@example.com</a></h3>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ======== FOOTER ======== -->
+  <!-- ======== FOOTER ======== -->
+  <!-- ======== FOOTER ======== -->
+  <!-- ======== FOOTER ======== -->
+  <!-- ======== FOOTER ======== -->
+  <!-- ======== FOOTER ======== -->
+
+
+
+
+  <footer id="footer" class="footer px-2">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">MADE in Житомир</span>
+          </a>
+          <p>Спільнота житомирян, яка об’єднує людей, що прагнуть зробити місто сучасним, комфортним та
+            креативним.
+            Разом ми реалізуємо проєкти для розвитку культури, бізнесу та міського простору.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.instagram.com/madeinzhytomyr/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://t.me/madeinzhytomyr884" target="_blank"><i class="bi bi-telegram"></i></a>
+            <a href="https://www.tiktok.com/@madeinzhytomyr" target="_blank"><i class="bi bi-tiktok"></i></a>
+            <a href="https://www.youtube.com/@madeinzhytomyr" target="_blank"><i class="bi bi-youtube"></i></a>
+
+            <a href="https://t.me/madeinzhytomyr_884" target="_blank" style="width: 75px;"
+              class="rounded-pill">Звіти</a>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>ПОСИЛАННЯ</h4>
+          <ul>
+            <li><a href="/" target="_blank">Хто Ми?</a></li>
+            <li><a href="#products">Мерч</a></li>
+            <li><a href="#delivery">Доставка</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#contact">Контакт</a></li>
+          </ul>
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-12 footer-contact text-md-start">
+          <h4>КОНТАКТ</h4>
+
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-geo-alt-fill me-2 text-secndary fs-5"></i>
+            <p class="mb-0">м. Житомир, Україна</p>
+          </div>
+
+          <div class="d-flex align-items-center ">
+            <i class="bi bi-envelope-fill me-2 text-secodary fs-5"></i>
+            <a href="mailto:madeinzhytomyr884@gmail.com" class="text-decoration-none text-white fw-semibold">
+              madeinzhytomyr884@gmail.com
+            </a>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4 rounded-3">
+      <p>© <span>2025</span> <strong class="px-1 sitename">MADE in Житомир</strong> <span>Всі права
+          захищені</span></p>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- Scroll Top Button -->
+  <!-- Scroll Top Button -->
+  <!-- Scroll Top Button -->
+  <!-- Scroll Top Button -->
+  <!-- Scroll Top Button -->
+  <!-- Scroll Top Button -->
+  <!-- Scroll Top Button -->
+  <!-- Scroll Top Button -->
+
+  <!-- Scroll Top Button -->
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center ">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+
+
+
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ======== JAVA SCRIPT  ======== -->
+  <!-- ======== JAVA SCRIPT  ======== -->
+  <!-- ======== JAVA SCRIPT  ======== -->
+  <!-- ======== JAVA SCRIPT  ======== -->
+  <!-- ======== JAVA SCRIPT  ======== -->
+  <!-- ======== JAVA SCRIPT  ======== -->
+  <script type="module" src="merch.js" defer></script>
+
+
+
+  <!-- ======== BOOTSTRAP  ======== -->
+  <!-- ======== BOOTSTRAP  ======== -->
+  <!-- ======== BOOTSTRAP  ======== -->
+  <!-- ======== BOOTSTRAP  ======== -->
+  <!-- ======== BOOTSTRAP  ======== -->
+  <!-- ======== BOOTSTRAP  ======== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <!-- ======== FIREBASE  ======== -->
+  <!-- ======== FIREBASE  ======== -->
+  <!-- ======== FIREBASE  ======== -->
+  <!-- ======== FIREBASE  ======== -->
+  <!-- ======== FIREBASE  ======== -->
+  <!-- ======== FIREBASE  ======== -->
+  <script type="module" src="merch_firebase.js"></script>
+
+
+
+
+
+
+  <!-- bootstrap модальне вікно -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
