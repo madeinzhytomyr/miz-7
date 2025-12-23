@@ -364,29 +364,46 @@
 
 
   <main class="m-0 p-0 py-4 main">
-    <div class="m-0 p-3 d-flex justify-content-center">
+    <div class="m-0 p-0 d-flex justify-content-center">
       <div class="m-0 p-0 container">
         <div class="m-0 p-0  row g-5 align-items-center justify-content-center product-card">
 
 
 
           <!-- === IMAGE === -->
-          <div class="m-0 p-3 mb-auto col-12 col-md-6 row border-0">
+          <div class="m-0 p-3 mb-auto col-12 col-md-9 col-lg-6 row border-0">
             <div class="m-0 p-0 col-12 position-relative rounded-5">
 
               <!-- ГОЛОВНЕ ФОТО -->
-              <div class="main-image-box position-relative rounded-5 overflow-hidden">
+              <div class="main-image-box position-relative rounded-3 overflow-hidden">
+
+                <button id="prev">&#10094;</button>
                 <img class="main-image w-100 h-100" style="object-fit:cover;">
+                <button id="next">&#10095;</button>
+
               </div>
 
               <!-- МІНІАТЮРИ -->
-              <div class="thumbs d-flex gap-2 mt-3">
-                <img class="thumb product-image ">
-                <img class="thumb product-image-2">
-                <img class="thumb product-image-3">
-                <img class="thumb product-image-4">
-                <img class="thumb product-image-5">
+              <div class="thumbs d-flex gap-2 mt-3"></div>
+
+
+              <!-- // на весь екран -->
+              <!-- // на весь екран -->
+              <!-- Lightbox -->
+              <div id="lightbox" style="display:none; " class="px-3">
+                <span id="lightbox-close">&times;</span>
+
+
+                <img id="lightbox-img" class="rounded-3">
+
+                <!-- Кнопки навігації -->
+                <button id="lightbox-prev">&#10094;</button>
+                <button id="lightbox-next">&#10095;</button>
+
+                <!-- Мініатюри -->
+                <div id="lightbox-thumbs" class="thumbs "></div>
               </div>
+
 
             </div>
           </div>
@@ -394,9 +411,9 @@
 
 
           <!-- INFO -->
-          <div class="col-12 col-md-6">
-            <h1 class="product-name fw-bold mb-4" >Produkt Name</h1>
-            <p class="product-description mb-4 text-secondary" >Produkt Description</p>
+          <div class="col-12 col-md-9 col-lg-6 ">
+            <h1 class="product-name fw-bold mb-4">Produkt Name</h1>
+            <p class="product-description mb-4 text-secondary">Produkt Description</p>
             <h2 class="product-price fw-bold mb-4">₴ 0.00</h2>
 
             <div class="d-flex align-items-center mb-4">
