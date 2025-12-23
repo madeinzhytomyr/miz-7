@@ -670,12 +670,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 👉 закриття по кліку на фон
     lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
+        if (e.target === lightbox && e.target !== lightboxImg) {
             lightbox.style.display = "none";
-        }
 
-        // відновлюємо скрол
-        document.body.style.overflow = "";
+            // відновлюємо скрол ТІЛЬКИ при закритті
+            document.body.style.overflow = "";
+        }
+    });
+
+    // 👉 закриття lightbox
+    lightboxImg.addEventListener("click", () => {
+        document.body.style.overflow = "hidden";
     });
 
     // додавання блокування скролу
