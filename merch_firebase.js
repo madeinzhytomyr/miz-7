@@ -43,19 +43,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ========================= Отримання IP =========================
 // ========================= Отримання IP =========================
 // ========================= Отримання IP =========================
@@ -79,24 +66,6 @@ async function getUserIP() {
     }
 }
 window.getUserIP = getUserIP;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ========================= Реєстрація користувача =========================
 // ========================= Реєстрація користувача =========================
@@ -151,24 +120,6 @@ async function addVisitor() {
 }
 
 window.addEventListener("load", addVisitor);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ========================= Відображення totalPay і totalAmount (тільки для цього IP) =========================
 // ========================= Відображення totalPay і totalAmount (тільки для цього IP) =========================
@@ -225,24 +176,6 @@ const totalAmountElement = document.getElementById("totalAmount");
             totalAmountElement.textContent = totalAmount.toString();
     });
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ======JS кошик справа меню   ПЛЮС/МІНУС/ВИДАЛЕННЯ ======
 // ======JS кошик справа меню   ПЛЮС/МІНУС/ВИДАЛЕННЯ ======
@@ -302,20 +235,6 @@ window.deleteProduct = async function (userKey, productIndex) {
     await update(userRef, { products: userData.products, pay: userData.pay });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ===== КОШИК У РЕАЛЬНОМУ ЧАСІ =====
 // ===== КОШИК У РЕАЛЬНОМУ ЧАСІ =====
 // ===== КОШИК У РЕАЛЬНОМУ ЧАСІ =====
@@ -329,14 +248,6 @@ window.deleteProduct = async function (userKey, productIndex) {
 // ===== КОШИК У РЕАЛЬНОМУ ЧАСІ =====
 // ===== КОШИК У РЕАЛЬНОМУ ЧАСІ =====
 // ===== КОШИК У РЕАЛЬНОМУ ЧАСІ =====
-
-
-
-
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", async () => {
     const sideCart = document.getElementById("sideCart");
@@ -364,26 +275,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         cartBackdrop.classList.add("active");
         await loadCartRealtime();
     });
-    
 
     // Закрити кошик
     closeCart?.addEventListener("click", closeSideCart);
     cartBackdrop.addEventListener("click", closeSideCart);
 
-
-
-
     async function loadCartRealtime() {
         const ip = await getUserIP();
         if (ip === "unknown") return;
-    
+
         const visitorKey = ip.replace(/\./g, "_");
         const userRef = ref(db, "visitors/" + visitorKey);
-    
+
         onValue(userRef, (snapshot) => {
             let html = "";
             let total = 0;
-    
+
             const emptyCartHTML = `
                 <div id="usersContainer" style="color: #ff3399; background-color: #141414" class="m-0 p-0 py-3 col-12 d-flex flex-column gap-3 ">
                             <div class="empty-cart-alert d-flex flex-column align-items-center justify-content-center text-center p-5 rounded-4 shadow-sm">
@@ -395,16 +302,20 @@ document.addEventListener("DOMContentLoaded", async () => {
                             </div>
                         </div>
             `;
-    
-            if (!snapshot.exists() || !Array.isArray(snapshot.val().products) || snapshot.val().products.length === 0) {
+
+            if (
+                !snapshot.exists() ||
+                !Array.isArray(snapshot.val().products) ||
+                snapshot.val().products.length === 0
+            ) {
                 cartContent.innerHTML = emptyCartHTML;
                 cartTotalPrice.textContent = "₴0.00";
                 return;
             }
-    
+
             snapshot.val().products.forEach((p, index) => {
                 total += p.summary;
-    
+
                 html += `
 
 
@@ -413,9 +324,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                  <div class="m-0 p-0 pt-4 mt-2 row cart-item border-0">
 
 
- <img class="m-0 p-0 col-auto " src = "${
-                                            p.image
-                                        }" alt = "${p.name}" >
+ <img class="m-0 p-0 col-auto " src = "${p.image}" alt = "${p.name}" >
 
 
                             <div class="m-0 p-0 col">
@@ -453,29 +362,14 @@ document.addEventListener("DOMContentLoaded", async () => {
                             </div></div>
                 `;
             });
-    
+
             cartContent.innerHTML = html;
             cartTotalPrice.textContent = `₴${total.toFixed(2)}`;
         });
     }
 
-    
-
-
-
-
     window.loadCartRealtime = loadCartRealtime; // ← ДОДАЙ
 });
-
-
-
-
-
-
-
-
-
-
 
 // Відкрити кошик
 // Відкрити кошик
@@ -495,17 +389,6 @@ function openSideCart() {
 
     document.body.style.overflow = "hidden";
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // Закрити кошик
 // Закрити кошик
@@ -527,24 +410,6 @@ function closeSideCart() {
     document.body.style.overflow = ""; // 🟢 повертаємо скрол
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // напис добавте товар в кошик
 // напис добавте товар в кошик
 // напис добавте товар в кошик
@@ -561,7 +426,6 @@ function removeFillAlert() {
     const oldAlert = document.getElementById("fillAlert");
     if (oldAlert) oldAlert.remove();
 }
-
 
 // Відкриття доставки
 
@@ -585,17 +449,6 @@ orderBtn.addEventListener("click", () => {
     cartBackdrop.classList.add("active");
 });
 
-
-
-
-
-
-
-
-
-
-
-
 // Закриття доставки кнопкою хрестик\
 // Закриття доставки кнопкою хрестик
 // Закриття доставки кнопкою хрестик
@@ -614,15 +467,6 @@ closeCart?.addEventListener("click", () => {
     removeFillAlert();
 });
 
-
-
-
-
-
-
-
-
-
 // Закриття доставки по backdrop
 // Закриття доставки по backdrop
 // Закриття доставки по backdrop
@@ -638,15 +482,6 @@ cartBackdrop.addEventListener("click", () => {
     cartBackdrop.classList.remove("active");
     removeFillAlert();
 });
-
-
-
-
-
-
-
-
-
 
 // 🎯 Виклик при кліку кошика normal i через openCart
 // 🎯 Виклик при кліку кошика normal i через openCart
@@ -666,16 +501,6 @@ document.getElementById("closeCart").addEventListener("click", closeSideCart);
 document
     .getElementById("cartBackdrop")
     .addEventListener("click", closeSideCart);
-
-
-
-
-
-
-
-
-
-
 
 // 🔽 закриваємо бічний кошик
 // 🔽 закриваємо бічний кошик
@@ -704,7 +529,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const confirmBtn = document.getElementById("confirmBtn");
     const confirmCheckbox = document.getElementById("confirmPayment");
     const titleSpan = document.getElementById("paymentTitle");
-
 
     // ========= Перевірка форми sideDelivery =========
     // ========= Перевірка форми sideDelivery =========
@@ -743,7 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ========= Закриття sideDelivery =========
-        // ========= Закриття sideDelivery =========
+    // ========= Закриття sideDelivery =========
     // ========= Закриття sideDelivery =========
     // ========= Закриття sideDelivery =========
     // ========= Закриття sideDelivery =========
@@ -759,7 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ========= Функції для sidePayment =========
-        // ========= Функції для sidePayment =========
+    // ========= Функції для sidePayment =========
     // ========= Функції для sidePayment =========
     // ========= Функції для sidePayment =========
     // ========= Функції для sidePayment =========
@@ -776,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
     paymentBackdrop.addEventListener("click", closePaymentPanel);
 
     // ========= Кнопка підтвердження оплати =========
-        // ========= Кнопка підтвердження оплати =========
+    // ========= Кнопка підтвердження оплати =========
     // ========= Кнопка підтвердження оплати =========
     // ========= Кнопка підтвердження оплати =========
     // ========= Кнопка підтвердження оплати =========
@@ -803,7 +627,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (existingAlert) existingAlert.remove();
 
         // --- Логіка Firebase ---
-                // --- Логіка Firebase ---
+        // --- Логіка Firebase ---
         // --- Логіка Firebase ---
         // --- Логіка Firebase ---
         // --- Логіка Firebase ---
@@ -849,23 +673,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ========================= Підтвердження платежу // Генерація 6-значного коду ддя перекащу титут переказу=========================
 // ========================= Підтвердження платежу // Генерація 6-значного коду ддя перекащу титут переказу=========================
 // ========================= Підтвердження платежу // Генерація 6-значного коду ддя перекащу титут переказу=========================
@@ -891,17 +698,6 @@ function refreshPaymentTitle() {
     currentTitle = generateRandomTitle();
     if (titleSpan) titleSpan.textContent = currentTitle;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // sideSuccess sideSuccess
 // sideSuccess sideSuccess
@@ -960,18 +756,6 @@ successBackdrop.addEventListener("click", () => {
     successBackdrop.classList.remove("active");
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
 // ========================= Збереження контактних даних =========================
 // ========================= Збереження контактних даних =========================
 // ========================= Збереження контактних даних =========================
@@ -1029,15 +813,6 @@ if (saveButton) {
     });
 }
 
-
-
-
-
-
-
-
-
-
 // ========================= Автозаповнення форми =========================
 // ========================= Автозаповнення форми =========================
 // ========================= Автозаповнення форми =========================
@@ -1079,29 +854,6 @@ window.loadUserData = async function () {
     });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ========================= Завантаження даних при завантаженні сторінки =========================
 // ========================= Завантаження даних при завантаженні сторінки =========================
 // ========================= Завантаження даних при завантаженні сторінки =========================
@@ -1113,212 +865,491 @@ window.loadUserData = async function () {
 // ========================= Завантаження даних при завантаженні сторінки =========================
 window.addEventListener("load", window.loadUserData);
 
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+// 🔹 Ініціалізація при завантаженні merch_card
+document.addEventListener("DOMContentLoaded", initProductPage);
 
+function initProductPage() {
+    const card = document.querySelector(".product-card");
+    if (!card) return;
 
+    const productName = card.querySelector(".product-name");
+    const productPrice = card.querySelector(".product-price");
+    const productOpis = card.querySelector(".product-opis");
+    const productDescription = card.querySelector(".product-description");
 
+    const mainImage = document.querySelector(".main-image");
+    const thumbsContainer = document.querySelector(".thumbs");
 
+    const quantityInput = card.querySelector(".quantity-input");
+    const plusBtn = card.querySelector(".btn-plus");
+    const minusBtn = card.querySelector(".btn-minus");
+    const addToCartBtn = document.getElementById("addToCartDynamic");
 
+    // URL params
+    // URL params
+    // URL params
+    // URL params
+    // URL params
 
+    const params = new URLSearchParams(window.location.search);
 
-
-
-
-
-
-
-
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-    // 🔹 Ініціалізація при завантаженні merch_card 
-
-    window.addEventListener("load", addVisitor);
-
-    document.addEventListener("DOMContentLoaded", initProductPage);
-    
-    function initProductPage() {
-      const card = document.querySelector(".product-card");
-      if (!card) return; // ⬅️ сторінка не продукт — вихід
-    
-      const productName = card.querySelector(".product-name");
-      const productPrice = card.querySelector(".product-price");
-      const productOpis = card.querySelector(".product-opis");
-
-      const productImage = card.querySelector(".product-image");
-      const productImage2 = card.querySelector(".product-image-2");
-      const productImage3 = card.querySelector(".product-image-3");
-      const productImage4 = card.querySelector(".product-image-4");
-      const productImage5 = card.querySelector(".product-image-5");
-
-
-      const productDescription = card.querySelector(".product-description");
-      const quantityInput = card.querySelector(".quantity-input");
-      const plusBtn = card.querySelector(".btn-plus");
-      const minusBtn = card.querySelector(".btn-minus");
-      const addToCartBtn = document.getElementById("addToCartDynamic");
-    
-      // 🔹 URL параметри
-      const params = new URLSearchParams(window.location.search);
-      const product = {
+    const product = {
         name: params.get("name") ?? "Produkt",
         price: params.get("price") ?? "0.00",
-        opis: params.get("opis") ?? "Opis",
-
-        image: params.get("image") ?? "",
-        image2: params.get("image2") ?? "",
-        image3: params.get("image3") ?? "",
-        image4: params.get("image4") ?? "",
-        image5: params.get("image5") ?? "",
-
+        opis: params.get("opis") ?? "",
         description: params.get("description") ?? "",
+        images: JSON.parse(params.get("images") || "[]"),
         link: window.location.href,
-      };
-    
-      // 🔹 Заповнення контенту (safe)
-      if (productName) productName.textContent = product.name;
-      if (productPrice) productPrice.textContent = `₴ ${product.price}`;
+    };
 
-      if (productImage) productImage.src = product.image;
-      if (productImage2) productImage2.src = product.image2;
-      if (productImage3) productImage3.src = product.image3;
-      if (productImage4) productImage4.src = product.image4;
-      if (productImage5) productImage5.src = product.image5;
+    // текст
+    productName.textContent = product.name;
+    productPrice.textContent = `₴ ${product.price}`;
+    productOpis.textContent = product.opis;
+    productDescription.textContent = product.description;
+    document.title = product.name;
 
-      if (productDescription) productDescription.textContent = product.description;
-      if (productOpis) productOpis.textContent = product.opis;
+    // фото
+    // фото
+    // фото
+    // фото
+    // фото
+    // фото
+    // фото
 
-      document.title = product.name;
-    
-      // 🔹 Кількість
-      if (quantityInput) {
-        plusBtn?.addEventListener("click", () => {
-          quantityInput.value = Number(quantityInput.value) + 1;
+    if (product.images.length) {
+        mainImage.src = product.images[0];
+        thumbsContainer.innerHTML = "";
+
+        product.images.forEach((src) => {
+            const img = document.createElement("img");
+            img.className = "thumb";
+            img.src = src;
+
+            img.addEventListener("click", () => {
+                mainImage.src = src;
+
+                thumbsContainer
+                    .querySelectorAll(".thumb")
+                    .forEach((t) => t.classList.remove("active"));
+
+                img.classList.add("active");
+            });
+
+            thumbsContainer.appendChild(img);
         });
-    
-        minusBtn?.addEventListener("click", () => {
-          quantityInput.value = Math.max(1, Number(quantityInput.value) - 1);
-        });
-      }
-    
-      // 🔹 Додати в кошик — ГЛОБАЛЬНО
-      addToCartBtn?.addEventListener("click", () => {
-        const amount = Number(quantityInput?.value) || 1;
-        addUserFromInput(
-          product.image,
-          product.name,
-          product.price,
-          product.link,
-          amount
-        );
-      });
-
-      // 🌍 глобально доступно (якщо треба)
-      window.currentProduct = product;
     }
-    
 
+    // кількість
+    // кількість
+    // кількість
+    // кількість
+    // кількість
+    // кількість
+    // кількість
 
+    plusBtn?.addEventListener("click", () => {
+        quantityInput.value = Number(quantityInput.value) + 1;
+    });
 
+    minusBtn?.addEventListener("click", () => {
+        quantityInput.value = Math.max(1, Number(quantityInput.value) - 1);
+    });
 
+    // додати в кошик
+    // додати в кошик
+    // додати в кошик
+    // додати в кошик
+    // додати в кошик
+    // додати в кошик
+    // додати в кошик
 
+    addToCartBtn?.addEventListener("click", () => {
+        addUserFromInput(
+            product.images[0] ?? "",
+            product.name,
+            product.price,
+            product.link,
+            Number(quantityInput.value) || 1
+        );
+    });
 
+    // кнопки наступне і попереднє фото
+    // кнопки наступне і попереднє фото
+    // кнопки наступне і попереднє фото
+    // кнопки наступне і попереднє фото
+    // кнопки наступне і попереднє фото
+    // кнопки наступне і попереднє фото
+    // кнопки наступне і попереднє фото
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
 
+    // Приклад масиву фото
+    const images = product.images; // або будь-який масив URL
 
+    let currentIndex = 0;
 
+    // Встановлюємо перше фото
+    mainImage.src = images[0];
+    thumbsContainer.innerHTML = "";
 
+    // Створюємо мініатюри
+    images.forEach((src, index) => {
+        const img = document.createElement("img");
+        img.src = src;
+        if (index === 0) img.classList.add("active");
 
-
-
-
-    // 🔹 Додавання товару у кошик в merch_card 
-     // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-    // 🔹 Додавання товару у кошик в merch_card 
-
-    async function addUserFromInput(image, name, price, link, amount = 1) {
-
-        const numericPrice = parseFloat(price) || 0;
-        const ip = await getUserIP();
-        if (ip === "unknown") return console.error("IP unknown");
-  
-        const userKey = ip.replace(/\./g, "_");
-        const userRef = ref(db, "visitors/" + userKey);
-        const snapshot = await get(userRef);
-        let products = snapshot.exists() ? snapshot.val().products || [] : [];
-  
-        const existingIndex = products.findIndex(p => p.image === image);
-        if (existingIndex > -1) {
-          products[existingIndex].amount = amount;
-          products[existingIndex].summary = numericPrice * amount;
-        } else {
-          products.push({ image, name, link, amount, price: numericPrice, summary: numericPrice * amount });
-        }
-  
-        const totalPay = products.reduce((sum, p) => sum + (p.summary || 0), 0);
-        await update(userRef, { products, pay: totalPay, timestamp: new Date().toLocaleString("uk-UA") });
-  
-      
-        //<!-- ініціаліщація товарів вкршику щоб появились -->
-        //<!-- ініціаліщація товарів вкршику щоб появились -->
-  
-        await update(userRef, {
-          products,
-          pay: totalPay,
-          timestamp: new Date().toLocaleString("uk-UA")
+        img.addEventListener("click", () => {
+            currentIndex = index;
+            updateMainImage();
         });
-  
-        // ⬇️ ДОДАЙ ЦЕ
-        loadCartRealtime(products);
-  
-        //<!-- відкритя кошика після натискання кнопки -->
-        //<!-- відкритя кошика після натискання кнопки -->
-        //<!-- відкритя кошика після натискання кнопки -->
-  
-        sideCart.classList.add('active');
-        cartBackdrop.classList.add('active');
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-      }
-  
 
+        thumbsContainer.appendChild(img);
+    });
 
+    // Функція оновлення головного фото і активної мініатюри
+    function updateMainImage() {
+        mainImage.src = images[currentIndex];
 
+        thumbsContainer.querySelectorAll("img").forEach((t, i) => {
+            t.classList.toggle("active", i === currentIndex);
+        });
+    }
 
+    function updateMainImage() {
+        mainImage.src = images[currentIndex];
+
+        thumbsContainer.querySelectorAll("img").forEach((t, i) => {
+            t.classList.toggle("active", i === currentIndex);
+        });
+
+        // Прокручуємо активну мініатюру по центру контейнера
+        const activeThumb = thumbsContainer.querySelector("img.active");
+        if (activeThumb) {
+            activeThumb.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest", // по вертикалі, якщо потрібно
+                inline: "center", // по горизонталі
+            });
+        }
+    }
+
+    // Стрілки
+    prevBtn.addEventListener("click", () => {
+        currentIndex--;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        updateMainImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+        currentIndex++;
+        if (currentIndex >= images.length) currentIndex = 0;
+        updateMainImage();
+    });
+
+    // на весь екран і збільшення
+    // на весь екран і збільшення
+    // на весь екран і збільшення
+    // на весь екран і збільшення
+    // на весь екран і збільшення
+    // на весь екран і збільшення
+    // на весь екран і збільшення
+    // на весь екран і збільшення
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxClose = document.getElementById("lightbox-close");
+
+    let zoomed = false; // стан збільшення
+
+    // Відкриття lightbox
+    mainImage.addEventListener("click", () => {
+        lightboxImg.src = mainImage.src;
+        lightbox.style.display = "flex";
+        lightboxImg.classList.remove("zoom-out");
+        lightboxImg.classList.add("zoom-in");
+        zoomed = false;
+    });
+
+    // Відкриття lightbox по натиску на головне фото
+    mainImage.addEventListener("click", () => {
+        // знаходимо індекс головного фото в масиві images
+        const index = images.indexOf(mainImage.src);
+        // якщо не знайдено, беремо 0
+        openLightbox(index >= 0 ? index : 0);
+    });
+
+    // Toggle збільшення/зменшення по кліку на фото
+    // Toggle збільшення/зменшення по кліку на фото
+    // Toggle збільшення/зменшення по кліку на фото
+    // Toggle збільшення/зменшення по кліку на фото
+    // Toggle збільшення/зменшення по кліку на фото
+    // Toggle збільшення/зменшення по кліку на фото
+    // Toggle збільшення/зменшення по кліку на фото
+    // Toggle збільшення/зменшення по кліку на фото
+
+    lightboxImg.addEventListener("click", (e) => {
+        const rect = lightboxImg.getBoundingClientRect();
+
+        // координати кліку відносно зображення
+        const offsetX = e.clientX - rect.left;
+        const offsetY = e.clientY - rect.top;
+
+        // transform-origin у відсотках
+        const originX = (offsetX / rect.width) * 100;
+        const originY = (offsetY / rect.height) * 100;
+
+        // Збільшення від точки кліку
+        if (!zoomed) {
+            lightboxImg.style.transformOrigin = `${originX}% ${originY}%`;
+            lightboxImg.style.transform = "scale(3.0)";
+            zoomed = true;
+            lightboxImg.classList.add("zoomed"); // додаємо клас для zoom-out курсора
+        } else {
+            // Зменшення назад, від тієї ж точки
+            lightboxImg.style.transform = "scale(1)";
+            zoomed = false;
+            // залишаємо transformOrigin від точки кліку
+            lightboxImg.classList.remove("zoomed"); // повертаємо zoom-in курсор
+        }
+    });
+
+    // Закриття по хрестику
+    lightboxClose.addEventListener("click", () => {
+        lightbox.style.display = "none";
+        lightboxImg.style.transform = "scale(1)";
+        lightboxImg.classList.remove("zoom-out");
+        lightboxImg.classList.add("zoom-in");
+        zoomed = false;
+
+        // скролбар відновлення
+        closeLightbox();
+    });
+
+    // Закриття по ESC
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            lightbox.style.display = "none";
+            lightboxImg.style.transform = "scale(1)";
+            lightboxImg.classList.remove("zoom-out");
+            lightboxImg.classList.add("zoom-in");
+            zoomed = false;
+
+            // скролбар відновлення
+            closeLightbox();
+        }
+    });
+
+    // Закриття по кліку на фон
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+            lightboxImg.style.transform = "scale(1)";
+            lightboxImg.classList.remove("zoom-out");
+            lightboxImg.classList.add("zoom-in");
+            zoomed = false;
+
+            // скролбар відновлення
+            closeLightbox();
+        }
+    });
+
+    // мініатюри і кнопки на вест екран
+    // мініатюри і кнопки на вест екран
+    // мініатюри і кнопки на вест екран
+    // мініатюри і кнопки на вест екран
+    // мініатюри і кнопки на вест екран
+    // мініатюри і кнопки на вест екран
+    // мініатюри і кнопки на вест екран
+    // мініатюри і кнопки на вест екран
+    // мініатюри і кнопки на вест екран
+
+    const lightboxPrev = document.getElementById("lightbox-prev");
+    const lightboxNext = document.getElementById("lightbox-next");
+    const lightboxThumbs = document.getElementById("lightbox-thumbs");
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.style.display = "flex";
+        updateThumbs();
+    }
+
+    function updateThumbs() {
+        lightboxThumbs.innerHTML = "";
+
+        images.forEach((src, i) => {
+            const img = document.createElement("img");
+            img.src = src;
+            if (i === currentIndex) img.classList.add("active");
+            img.addEventListener("click", () => openLightbox(i));
+            lightboxThumbs.appendChild(img);
+        });
+
+        // Центруємо активну мініатюру після рендеру
+        requestAnimationFrame(() => {
+            const activeThumb = lightboxThumbs.querySelector("img.active");
+            if (activeThumb) {
+                const containerRect = lightboxThumbs.getBoundingClientRect();
+                const thumbRect = activeThumb.getBoundingClientRect();
+
+                const scrollLeft =
+                    lightboxThumbs.scrollLeft +
+                    thumbRect.left -
+                    containerRect.left -
+                    containerRect.width / 2 +
+                    thumbRect.width / 2;
+
+                lightboxThumbs.scrollTo({
+                    left: scrollLeft,
+                    behavior: "smooth",
+                });
+            }
+        });
+    }
+
+    lightboxPrev.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        openLightbox(currentIndex);
+
+        // прибираєм zoom
+        // прибираєм zoom
+        // прибираєм zoom
+        lightboxImg.style.transform = "scale(1)";
+        zoomed = false;
+        // залишаємо transformOrigin від точки кліку
+        lightboxImg.classList.remove("zoomed"); // повертаємо zoom-in курсор
+    });
+
+    lightboxNext.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        openLightbox(currentIndex);
+
+        // прибираєм zoom
+        // прибираєм zoom
+        // прибираєм zoom
+        lightboxImg.style.transform = "scale(1)";
+        zoomed = false;
+        // залишаємо transformOrigin від точки кліку
+        lightboxImg.classList.remove("zoomed"); // повертаємо zoom-in курсор
+    });
+
+    lightboxClose.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") lightbox.style.display = "none";
+    });
+
+    // Приклад відкриття lightbox з головного зображення
+
+    // додавання блокування скролу
+    // додавання блокування скролу
+    // додавання блокування скролу
+    // додавання блокування скролу
+    // додавання блокування скролу
+    // додавання блокування скролу
+    // додавання блокування скролу
+    // додавання блокування скролу
+    // додавання блокування скролу
+    // додавання блокування скролу
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.style.display = "flex";
+        updateThumbs();
+
+        // Забороняємо скрол сторінки
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = "none";
+
+        // Відновлюємо скрол
+        document.body.style.overflow = "";
+    }
+
+    window.currentProduct = product;
+}
+
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+// 🔹 Додавання товару у кошик в merch_card
+
+async function addUserFromInput(image, name, price, link, amount = 1) {
+    const numericPrice = parseFloat(price) || 0;
+    const ip = await getUserIP();
+    if (ip === "unknown") return console.error("IP unknown");
+
+    const userKey = ip.replace(/\./g, "_");
+    const userRef = ref(db, "visitors/" + userKey);
+    const snapshot = await get(userRef);
+    let products = snapshot.exists() ? snapshot.val().products || [] : [];
+
+    const existingIndex = products.findIndex((p) => p.image === image);
+    if (existingIndex > -1) {
+        products[existingIndex].amount = amount;
+        products[existingIndex].summary = numericPrice * amount;
+    } else {
+        products.push({
+            image,
+            name,
+            link,
+            amount,
+            price: numericPrice,
+            summary: numericPrice * amount,
+        });
+    }
+
+    const totalPay = products.reduce((sum, p) => sum + (p.summary || 0), 0);
+    await update(userRef, {
+        products,
+        pay: totalPay,
+        timestamp: new Date().toLocaleString("uk-UA"),
+    });
+
+    //<!-- ініціаліщація товарів вкршику щоб появились -->
+    //<!-- ініціаліщація товарів вкршику щоб появились -->
+
+    await update(userRef, {
+        products,
+        pay: totalPay,
+        timestamp: new Date().toLocaleString("uk-UA"),
+    });
+
+    // ⬇️ ДОДАЙ ЦЕ
+    loadCartRealtime(products);
+
+    //<!-- відкритя кошика після натискання кнопки -->
+    //<!-- відкритя кошика після натискання кнопки -->
+    //<!-- відкритя кошика після натискання кнопки -->
+
+    sideCart.classList.add("active");
+    cartBackdrop.classList.add("active");
+}
 
 
 
