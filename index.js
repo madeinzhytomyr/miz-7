@@ -141,26 +141,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const products = [
         {
             name: "Розвиваюче заннятя для дошкільнят",
-            img: "https://i.postimg.cc/4xCBDHhm/project-3-1.jpg",
             tags: ["Житомир", "Україна"],
             date: "18 жовтня 2025",
             category: "Завершено",
             filter: "2025",
 
-            description:
-                " Це тепле та пізнавальне заняття було успішно реалізоване командою MADE in Житомир. Ми організували розвиваючий захід для малюків дошкільного віку, де діти змогли потренувати увагу, пам’ять, моторику та комунікацію в ігровій і дружній атмосфері.",
+            description: "Тренуємо увагу, пам’ять, моторику та комунікацію",
 
-            img2: "https://i.postimg.cc/d0wn1MBb/project-3-2.jpg",
-            img3: "https://i.postimg.cc/hGssQCZ8/project-3-3.jpg",
-            img4: "https://i.postimg.cc/wvbk01pK/project-3-4.jpg",
-            img5: "https://i.postimg.cc/j2p4YBCx/project-3-5.jpg",
-            img6: "https://i.postimg.cc/ZY2GqRdv/project-3-6.jpg",
-            img7: "https://i.postimg.cc/x1SBK45v/project-3-7.jpg",
-            img8: "https://i.postimg.cc/Nj7SbkPh/project-3-8.jpg",
-            img9: "https://i.postimg.cc/dVmpnjSQ/project-3-9.jpg",
-            img10: "https://i.postimg.cc/KYGVW3dP/project-3-10.jpg",
-            img11: "https://i.postimg.cc/q71YHMr7/project-3-11.jpg",
-            img12: "https://i.postimg.cc/RF8Dqsqt/project-3-12.jpg",
+            images: [
+                "https://i.postimg.cc/4xCBDHhm/project-3-1.jpg",
+                "https://i.postimg.cc/d0wn1MBb/project-3-2.jpg",
+                "https://i.postimg.cc/hGssQCZ8/project-3-3.jpg",
+                "https://i.postimg.cc/wvbk01pK/project-3-4.jpg",
+                "https://i.postimg.cc/j2p4YBCx/project-3-5.jpg",
+                "https://i.postimg.cc/ZY2GqRdv/project-3-6.jpg",
+                "https://i.postimg.cc/x1SBK45v/project-3-7.jpg",
+                "https://i.postimg.cc/Nj7SbkPh/project-3-8.jpg",
+                "https://i.postimg.cc/dVmpnjSQ/project-3-9.jpg",
+                "https://i.postimg.cc/KYGVW3dP/project-3-10.jpg",
+                "https://i.postimg.cc/q71YHMr7/project-3-11.jpg",
+                "https://i.postimg.cc/RF8Dqsqt/project-3-12.jpg",
+            ],
 
             text01: "Ми прагнемо створювати умови, де діти можуть навчатися, розвивати свої навички та отримувати важливий досвід через гру й взаємодію. Наше заняття стало чудовою можливістю для малюків розширити кругозір у комфортному середовищі.",
             title1: "Як пройшло заняття",
@@ -175,7 +176,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             coordinator_desc:
                 "“Найкраще навчання — це навчання через гру. Ми щасливі бачити, як діти відкривають нове та проявляють свої здібності.”",
-            coordinator_img: "https://i.postimg.cc/V5Ps9Nrw/anastasia-diachenko.jpg",
+            coordinator_img:
+                "https://i.postimg.cc/V5Ps9Nrw/anastasia-diachenko.jpg",
             coordinator_name: "Анастасія Дяченко",
             coordinator_position: "Координаторка проєкту",
             text02: "Проєкт став ще одним кроком до створення корисних, змістовних і теплих подій для дітей нашої громади.",
@@ -198,26 +200,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             name: "Майстер-клас з танців для дівчат",
-            img: "https://i.postimg.cc/LsjKdMX5/project-2-1.jpg",
             tags: ["Житомир", "Україна"],
             date: "20 вересня 2025",
             category: "Завершено",
             filter: "2025",
 
-            description:
-                "   Цей проєкт став яскравою подією для дівчат Житомира.  Ми організували танцювальний майстер-клас, де кожна учасниця змогла спробувати себе у хореографії, відчути свободу руху та зарядитися позитивними емоціями. Захід успішно реалізовано та подарував дівчатам мотивацію, енергію й нові враження.",
+            description: "Розвиваємо ритм, грацію та впевненість у собі",
 
-            img2: "https://i.postimg.cc/mZmxWjbs/project-2-2.jpg",
-            img3: "https://i.postimg.cc/kgtL8dWj/project-2-3.jpg",
-            img4: "https://i.postimg.cc/QtSzsNrM/project-2-4.jpg",
-            img5: "https://i.postimg.cc/wMGbyWMK/project-2-5.jpgg",
-            img6: "https://i.postimg.cc/CMP2QKNs/project-2-6.jpg",
-            img7: "https://i.postimg.cc/FsY65QWP/project-2-7.jpg",
-            img8: "https://i.postimg.cc/NfZzQPZK/project-2-8.jpg",
-            img9: "https://i.postimg.cc/QtN66LKR/project-2-9.jpg",
-            img10: "https://i.postimg.cc/85yZ9yhr/project-2-10.jpg",
-            img11: "https://i.postimg.cc/zvVxrnjj/project-2-11.jpg",
-            img12: "https://i.postimg.cc/zDcdkczF/project-2-12.jpg",
+            images: [
+                "https://i.postimg.cc/LsjKdMX5/project-2-1.jpg",
+                "https://i.postimg.cc/mZmxWjbs/project-2-2.jpg",
+                "https://i.postimg.cc/kgtL8dWj/project-2-3.jpg",
+                "https://i.postimg.cc/QtSzsNrM/project-2-4.jpg",
+                "https://i.postimg.cc/wMGbyWMK/project-2-5.jpgg",
+                "https://i.postimg.cc/CMP2QKNs/project-2-6.jpg",
+                "https://i.postimg.cc/FsY65QWP/project-2-7.jpg",
+                "https://i.postimg.cc/NfZzQPZK/project-2-8.jpg",
+                "https://i.postimg.cc/QtN66LKR/project-2-9.jpg",
+                "https://i.postimg.cc/85yZ9yhr/project-2-10.jpg",
+                "https://i.postimg.cc/zvVxrnjj/project-2-11.jpg",
+                "https://i.postimg.cc/zDcdkczF/project-2-12.jpg",
+            ],
 
             text01: "Ми віримо, що танці — це спосіб самовираження, впевненості та внутрішньої гармонії. Наш майстер-клас дав можливість дівчатам відчути себе вільно, красиво та натхненно. Проєкт продемонстрував, наскільки важливими є подібні заходи для розвитку молоді та створення підтримуючого середовища.",
             title1: "Як пройшов майстер-клас",
@@ -232,7 +235,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             coordinator_desc:
                 " “Цей майстер-клас дав дівчатам можливість відчути свою силу, красу та індивідуальність. Танці — це про свободу руху, енергію та емоції. Ми щасливі, що змогли створити таку атмосферу.”",
-            coordinator_img: "https://i.postimg.cc/V5Ps9Nrw/anastasia-diachenko.jpg",
+            coordinator_img:
+                "https://i.postimg.cc/V5Ps9Nrw/anastasia-diachenko.jpg",
             coordinator_name: "Анастасія Дяченко",
             coordinator_position: "Координаторка проєкту",
             text02: " Реалізований майстер-клас з танців — це важливий внесок у розвиток жіночої молоді, підтримку їхнього самовираження та формування здорової, впевненої спільноти.",
@@ -255,26 +259,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             name: "Майстер-клас з малювання для діток",
-            img: "https://i.postimg.cc/tCD4fWcm/project-1-1.jpg",
             tags: ["Житомир", "Україна"],
             date: "30 серпня 2025",
             category: "Завершено",
             filter: "2025",
 
-            description:
-                "  Цей творчий проєкт успішно реалізовано командою MADE in Житомир. Ми організували майстер-клас з малювання для діток, де кожен маленький учасник зміг проявити свою творчість, навчитися новим технікам та відчути справжню атмосферу мистецтва. Захід подарував дітям море емоцій, посмішок і натхнення.",
+            description: " Розвиваємо творчість та уяву",
 
-            img2: "https://i.postimg.cc/1Xsy73ry/project-1-2.jpg",
-            img3: "https://i.postimg.cc/xTj0KqdN/project-1-3.jpg",
-            img4: "https://i.postimg.cc/zXdqp5LS/project-1-4.jpg",
-            img5: "https://i.postimg.cc/cLr0bjwf/project-1-5.jpg",
-            img6: "https://i.postimg.cc/ZRhm05g3/project-1-6.jpg",
-            img7: "https://i.postimg.cc/xCy2mSVV/project-1-7.jpg",
-            img8: "https://i.postimg.cc/qqJdXZpk/project-1-8.jpg",
-            img9: "https://i.postimg.cc/T1tvkqPY/project-1-9.jpg",
-            img10: "https://i.postimg.cc/x86VsydK/project-1-10.jpg",
-            img11: "https://i.postimg.cc/ryjTFc9S/project-1-11.jpg",
-            img12: "https://i.postimg.cc/zXP1KjMs/project-1-12.jpg",
+            images: [
+                "https://i.postimg.cc/tCD4fWcm/project-1-1.jpg",
+                "https://i.postimg.cc/1Xsy73ry/project-1-2.jpg",
+                "https://i.postimg.cc/xTj0KqdN/project-1-3.jpg",
+                "https://i.postimg.cc/zXdqp5LS/project-1-4.jpg",
+                "https://i.postimg.cc/cLr0bjwf/project-1-5.jpg",
+                "https://i.postimg.cc/ZRhm05g3/project-1-6.jpg",
+                "https://i.postimg.cc/xCy2mSVV/project-1-7.jpg",
+                "https://i.postimg.cc/qqJdXZpk/project-1-8.jpg",
+                "https://i.postimg.cc/T1tvkqPY/project-1-9.jpg",
+                "https://i.postimg.cc/x86VsydK/project-1-10.jpg",
+                "https://i.postimg.cc/ryjTFc9S/project-1-11.jpg",
+                "https://i.postimg.cc/zXP1KjMs/project-1-12.jpg",
+            ],
 
             text01: "  Наша мета — створювати простір, де діти можуть розкривати свої таланти та отримувати щирі емоції. Реалізований майстер-клас став важливою подією, яка показала, наскільки дітям потрібні творчі зустрічі та підтримка їхнього розвитку.",
             title1: "Як пройшов майстер-клас",
@@ -289,7 +294,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             coordinator_desc:
                 "““Для нас важливо дарувати дітям моменти радості. Кожна картина — це маленька історія, яку дитина створила сама. Ми вдячні всім, хто був з нами та підтримав цей задум.”",
-            coordinator_img: "https://i.postimg.cc/V5Ps9Nrw/anastasia-diachenko.jpg",
+            coordinator_img:
+                "https://i.postimg.cc/V5Ps9Nrw/anastasia-diachenko.jpg",
             coordinator_name: "Анастасія Дяченко",
             coordinator_position: "Координаторка проєкту",
             text02: "Реалізований проєкт — ще один крок у розвитку дитячої творчості та зміцненні нашої спільноти.",
@@ -317,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
         card.innerHTML = `
             <a class="portfolio-card " style="cursor: pointer;" >
                 <div class="portfolio-image-container ">
-                    <img src="${product.img}" alt="${
+                    <img src="${product.images[0]}" alt="${
             product.name
         }" class="img-fluid" loading="lazy">
 
@@ -367,25 +373,13 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
             const query = new URLSearchParams({
                 name: product.name,
-                img: product.img,
                 tags: product.tags,
                 date: product.date,
                 category: product.category,
                 filter: product.filter,
 
                 description: product.description,
-
-                img2: product.img2,
-                img3: product.img3,
-                img4: product.img4,
-                img5: product.img5,
-                img6: product.img6,
-                img7: product.img7,
-                img8: product.img8,
-                img9: product.img9,
-                img10: product.img10,
-                img11: product.img11,
-                img12: product.img12,
+                images: JSON.stringify(product.images),
 
                 text01: product.text01,
                 title1: product.title1,
@@ -547,13 +541,18 @@ document.addEventListener("DOMContentLoaded", function () {
 // карта team
 // карта team
 // карта team
+
 document.addEventListener("DOMContentLoaded", function () {
     const products = [
         {
             name: "Андріан Іванюк",
             img: "https://i.postimg.cc/DZ51YtdL/andrian-ivaniuk.jpg",
             position: "Ідейний рушій",
-            social: [],
+            social: [
+                // {  icon: "bi bi-instagram", link: "https://www.instagram.com/pushkar_roma/", },
+                // { icon: "bi bi-youtube", link: "https://www.youtube.com/" },
+                // { icon: "bi bi-tiktok", link: "https://www.tiktok.com/" },
+            ],
         },
         {
             name: "Роман Пушкар",
@@ -609,26 +608,29 @@ document.addEventListener("DOMContentLoaded", function () {
             position: "Хранителька балансу",
             social: [],
         },
-
-        // {
-        //     name: "Роман Пушкар",
-        //     img: "/img/team/roman_pushkar.jpg",
-        //     position: "Організатор подій, які об’єднують людей",
-        //     social: [
-        //         { icon: "bi bi-instagram", link: "https://www.instagram.com/pushkar_roma/" },
-        //         { icon: "bi bi-youtube", link: "https://www.youtube.com/" },
-        //         { icon: "bi bi-tiktok", link: "https://www.tiktok.com/" }
-        //     ],
-        // },
     ];
 
     const container = document.getElementById("products_199");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxName = document.getElementById("lightbox-name");
+    const lightboxClose = document.getElementById("lightbox-close");
+
     let currentIndex = 0;
 
     function createCard(product) {
         const card = document.createElement("div");
+
         card.className =
             "team-card col-12 col-sm-12 col-md-6 col-lg-4 col-xxl-3 team-member0";
+
+        // Генеруємо посилання на соцмережі
+        const socialLinks = product.social
+            .map(
+                (s) =>
+                    `<a href="${s.link}" target="_blank" rel="noopener noreferrer" class="mt-3"><i class="${s.icon}"></i></a>`
+            )
+            .join("");
 
         card.innerHTML = `
             <div class="team-member card bg-dark border-0 shadow-sm rounded-4 p-3">
@@ -636,16 +638,64 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="${product.img}" class="img-fluid rounded-3 img_team" alt="${product.name}">
                 </div>
                 <div class="member-info text-center mt-2">
-                    <h6 class="fw-semibold text-white mb-1">${product.name}</h6>
+                    <h6 class="fw-semibold text-white  mb-2">${product.name}</h6>
                     <span class="small text-secondary d-block">${product.position}</span>
+                     <div class="team_social m-0 p-0">  ${socialLinks}    </div>
                 </div>
             </div>
         `;
+
+        // ✅ LIGHTBOX по кліку
+        const img = card.querySelector(".img_team");
+        img.addEventListener("click", () => {
+            // скрол блок
+            openLightbox(product.img, product.name);
+        });
+
         return card;
     }
 
-    // Рендеримо всі картки одразу
-    products.forEach((p) => container.appendChild(createCard(p)));
+    // 👉 рендер
+    products.forEach((p) => {
+        container.appendChild(createCard(p));
+    });
+
+    // 👉 закриття lightbox
+    lightboxClose.addEventListener("click", () => {
+        lightbox.style.display = "none";
+
+        // відновлюємо скрол
+        document.body.style.overflow = "";
+    });
+
+    // 👉 закриття по кліку на фон
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+
+        // відновлюємо скрол
+        document.body.style.overflow = "";
+    });
+
+    // додавання блокування скролу
+    // додавання блокування скролу
+    function openLightbox(img, name) {
+        lightboxImg.src = img;
+        lightboxName.textContent = name;
+
+        lightbox.style.display = "flex";
+
+        // блокуємо скрол
+        document.body.style.overflow = "hidden";
+    }
+
+    // інше
+    // інше
+    // інше
+    // інше
+    // інше
+    // інше
 
     function perView() {
         const w = window.innerWidth;
