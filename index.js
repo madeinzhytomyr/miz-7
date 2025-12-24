@@ -562,7 +562,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             name: "Богдан Коваленко",
-            img: "https://i.postimg.cc/nVgkm92W/bogdan-kovalenko.jpg",
+            img: "https://i.postimg.cc/hPcdBbX9/f3884486-55e6-47bf-9bc7-e1b3a1a76f2f.jpg",
             position: "Архітектор",
             social: [],
         },
@@ -648,9 +648,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // ✅ LIGHTBOX по кліку
         const img = card.querySelector(".img_team");
         img.addEventListener("click", () => {
-            // скрол блок
-            openLightbox(product.img, product.name);
+            const index = products.indexOf(product);
+            openLightbox(index);
         });
+        
 
         return card;
     }
@@ -683,17 +684,39 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.overflow = "hidden";
     });
 
-    // додавання блокування скролу
-    // додавання блокування скролу
-    function openLightbox(img, name) {
-        lightboxImg.src = img;
-        lightboxName.textContent = name;
 
+
+
+        // ===== СТРІЛКИ =====
+        const lightboxPrev = document.getElementById("lightbox-prev");
+        const lightboxNext = document.getElementById("lightbox-next");
+
+
+        lightboxPrev.addEventListener("click", () => {
+            currentIndex =
+                (currentIndex - 1 + products.length) % products.length;
+            openLightbox(currentIndex);
+        });
+        
+        lightboxNext.addEventListener("click", () => {
+            currentIndex =
+                (currentIndex + 1) % products.length;
+            openLightbox(currentIndex);
+        });
+        
+
+    // додавання блокування скролу
+    // додавання блокування скролу
+    function openLightbox(index) {
+        currentIndex = index;
+    
+        lightboxImg.src = products[currentIndex].img;
+        lightboxName.textContent = products[currentIndex].name;
+    
         lightbox.style.display = "flex";
-
-        // блокуємо скрол
         document.body.style.overflow = "hidden";
     }
+    
 
     // інше
     // інше
